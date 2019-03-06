@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 테스트</title>
+        <style>
+            .dark{
+                background-color:black;
+                color:blue;
+            }
+            .dark #yellow{
+                color : yellow;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var con1 = document.getElementById('alertfunc');
+                var con2 = document.getElementById('reset');
+                var con3 = document.getElementById('inp');
+                var con4 = document.getElementsByClassName('h12')[0];
+                    con1.addEventListener('click', function(){
+                    var result = confirm('배경색을 바꾸고 대범이의 이름을 노란글자로 바꾸시겠습니까?');
+                    if(result == true){
+                        document.body.className = "dark";
+                        con4.innerHTML = "사랑해 예린아";
+                    } else{
+                        alert('바꾸지 않습니다.');
+                    }
+                })
+                    con2.addEventListener('click', function(){
+                        var result = confirm('원래의 상태로 초기화 하시겠습니까?');
+                        if(result == true){
+                            document.body.className = "";
+                            con4.innerHTML = "";
+                        } else{
+                            alert('그대로 두겠습니다.');
+                        }
+                    })
+                    con3.addEventListener('click', function(){
+                        var result = prompt('당신의 아이디는 무엇입니까?');
+                        if(result == "ksh8367" || result == "gggggv3v"){
+                            alert(result + "님 반갑습니다.");
+                        } else {
+                            alert('존재하지 않는 아이디입니다.');
+                        }
+                    });
+        }
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>예린</li>
+            <li>상헌</li>
+            <li id = "yellow">대범</li>
+        </ul>
+        <h1 class = "h12"></h1>
+        <input type = "button" id ="alertfunc" value = "색깔바꾸기를 누르면 메시지를 볼 수 있습니다." />
+        <input type = "button" id ="reset" value = "색깔 초기화" />
+        <input type = "button" id = "inp" value = "아이디 입력하기" />
+    </body>
+</html>
